@@ -8,7 +8,7 @@ import requests
 
 
 def main():
-    """Print a user's location or the API rate limit reset time."""
+    """Print a user's location or the rate limit reset time."""
     url = sys.argv[1]
     response = requests.get(url)
 
@@ -25,4 +25,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
