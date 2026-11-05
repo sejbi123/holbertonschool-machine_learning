@@ -70,3 +70,4 @@ def all_in_one():
     plt.title('Project A', fontsize='x-small')
 
     plt.suptitle('All in One', fontsize='x-small')
+    
