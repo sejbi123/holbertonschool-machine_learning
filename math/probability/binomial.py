@@ -7,7 +7,7 @@ class Binomial:
     independent trials, each with probability p of success."""
 
     def __init__(self, data=None, n=1, p=0.5):
-        """Sets n and p, estimated from data if given"""
+        """Sets n and p, estimated from data if given."""
         if data is None:
             if n <= 0:
                 raise ValueError("n must be a positive value")
@@ -37,7 +37,7 @@ class Binomial:
             self.p = mean / n
 
     def pmf(self, k):
-        """PMF for k successes"""
+        """PMF for k successes."""
         if not isinstance(k, int):
             k = int(k)
         if k < 0:
@@ -51,7 +51,7 @@ class Binomial:
         return cnk * self.p ** k * (1 - self.p) ** (self.n - k)
 
     def cdf(self, k):
-        """CDF for k successes"""
+        """CDF for k successes."""
         if not isinstance(k, int):
             k = int(k)
         if k < 0:
@@ -65,15 +65,16 @@ class Binomial:
                 / (self.factorial(self.n - i) * self.factorial(i))
             )
 
-            result += cnk * self.p ** i * (1 - self.p) ** (self.n - i)
+            result += (
+                cnk * self.p ** i * (1 - self.p) ** (self.n - i)
+            )
 
         return result
 
     def factorial(self, n):
-        """Returns n!, computed by hand"""
+        """Returns n!, computed by hand."""
         result = 1
         for i in range(1, n + 1):
             result *= i
 
         return result
-    
